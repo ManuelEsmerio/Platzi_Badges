@@ -1,19 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Badge from './components/Badge';
+import 'bootstrap/dist/css/bootstrap.css'
+import './global.css'
 
-// const element = React.createElement('a',{ href:'https://www.platzi.com', target:"_blank"},"Ir a platzi");
-
-const name = 'Irene';
-// const element = React.createElement('h1',{},`Hola soy ${name}`);
-// const element = <h1> Hola soy { name } !!</h1>
-
-const jsx = (
-    <div>
-        <h1>Hola, soy { name }</h1>
-        <p>Soy ingeniero frontend</p>
-    </div>
-)
 const container = document.getElementById('app');
 
 // ReactDOM.render(__qué__, __dónde__);
-ReactDOM.render(jsx, container);
+ReactDOM.render(<Badge firstName="Irene" lastName="Garcia" jobTitle="Web developer" twitter="Esmerio55" avatar="http://www.gravatar.com/avatar?identicon" />, container);
