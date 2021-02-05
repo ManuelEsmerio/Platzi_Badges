@@ -1,0 +1,53 @@
+a:hover, a:active, a:focus {
+    text-decoration: none;
+    outline: 0;
+}
+
+.friend-list {
+   list-style: none;
+   margin-left: -40px;
+   
+}
+
+.friend-list li:hover {
+    transform: translate(-25px,0);
+    -webkit-transform: translate(-25px,0); /** Chrome & Safari **/
+    -o-transform: translate(-25px,0); /** Opera **/
+    -moz-transform: translate(-25px,0); /** Firefox **/
+}
+  
+.friend-list li a img {
+    float: left;
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+}
+  
+.friend-list li a {
+    position: relative;
+    display: block;
+    padding: 10px;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+.friend-list li a .friend-name, 
+.friend-list li a .friend-name:hover {
+    color: rgb(71, 66, 66);
+}
+
+.friend-list li a .last-message {
+    width: 65%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.friend-list li a .time {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+}

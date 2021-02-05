@@ -40,7 +40,7 @@ class BadgeNew extends Component{
                             lastName={ this.state.form.lastName } 
                             avatar="https://en.gravatar.com/avatar/identicon" 
                             jobTitle={ this.state.form.jobTitle } 
-                            email={ this.state.form.email }
+                            email={ this.state.form.email}
                             twitter={ this.state.form.twitter } />
                         </div>
 
