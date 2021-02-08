@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 import './style/BadgesList.css'
 
@@ -10,7 +11,7 @@ class BadgesList extends Component{
                     this.props.badges.map((badge)=>{
                         return(
                             <li className="shadow p-3 mb-2 bg-white rounded" key={ badge.id }>
-                                <a href="#" >
+                                <Link to="/" >
                                     <img src={ badge.avatarUrl } alt={ badge.firstName } 
                                     className="rounded-circle" />
                                     <div className="friend-name">	
@@ -19,7 +20,7 @@ class BadgesList extends Component{
                                     <div className="last-message text-muted">{ badge.email }
                                     </div>
                                     <small className="time text-muted">@{ badge.twitter }</small>
-                                </a>
+                                </Link>
                             </li>
                         )
                     })
