@@ -1,11 +1,12 @@
 import React from 'react'
 import confLogo from '../images/badge-header.svg'
+import Gravatar from './Gravatar';
 import "./style/Badge.css"
 
 class Badge extends React.Component{
     render(){
         // estructuración de objeto //
-        const {firstName, lastName, avatar, jobTitle, twitter} = this.props;
+        const {firstName, lastName, jobTitle, twitter, email} = this.props;
 
         return (
             <div className="Badge">
@@ -14,7 +15,7 @@ class Badge extends React.Component{
                 </div>
 
                 <div className="Badge__section-name">
-                    <img className="Badge__avatar" src={ avatar } alt="Avatar" />
+                    <Gravatar className='Badge__avatar' email={ email }/>
                     <h1>{ firstName } <br /> { lastName } </h1>
                 </div>
 
