@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import api from '../api'
 import Badge from '../components/Badge'
 import BadgeForm from '../components/BadgeForm'
-import PageError from '../components/PageError'
 import PageLoading from '../components/PageLoading'
 import header from '../images/platziconf-logo.svg'
 
@@ -11,8 +10,7 @@ import './style/BadgeNew.css'
 class BadgeNew extends Component{
     state = {
         loading: false,
-        error:null,
-        redirect: "/badges",
+        error:null, 
         form:{
             firstName:'',
             lastName:'',
@@ -69,6 +67,7 @@ class BadgeNew extends Component{
 
                         <div className="col-6">
                             <BadgeForm 
+                                type={ false }
                                 onChange={ this.handleChange } 
                                 formValue={ this.state.form }
                                 onSubmit={ this.handleSubmit }

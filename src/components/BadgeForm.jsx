@@ -5,7 +5,11 @@ class BadgeForm extends Component {
     render() {
         return (
             <div className="container">
-                <h1>New Attendant</h1>
+
+                {
+                    !this.props.type ? (<h1>New Attendant</h1>) : (<h1>Update Attendant</h1>)
+                }
+                
 
                 { this.props.error && (
                     <div className="alert alert-danger alert-dismissible fade show" role="alert">
@@ -43,7 +47,10 @@ class BadgeForm extends Component {
                             value={this.props.formValue.twitter} className="form-control" />
                     </div>
 
-                    <button className="btn btn-primary">Save</button>
+                    {
+                        !this.props.type ? (<button className="btn btn-primary">Save</button>) : (<button className="btn btn-warning">Save changes</button>)
+                    }
+
                 </form>
             </div>
         )

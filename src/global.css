@@ -51,6 +51,28 @@ a.link-unstyled:hover {
   box-shadow: 0 0 0 0.2rem rgba(125, 205, 64, 0.5);
 }
 
+.btn.btn-warning {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn.btn-warning:not(:disabled):not(.disabled):hover {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn.btn-warning:not(:disabled):not(.disabled):active {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn.btn-warning:not(:disabled):not(.disabled):focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+}
+
 .btn.btn-danger {
   color: #fff;
   background-color: #CD4040;
