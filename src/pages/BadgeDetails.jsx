@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+import DeleteBadgeModal from '../components/DeleteBadgeModal';
 import Badge from '../components/Badge';
 
 import confLogo from '../images/platziconf-logo.svg';
 import './style/BadgeDetails.css';
 
-const BadgeDetails = ({ badge, hash }) => {
+const BadgeDetails = ({ badge, hash, modalIsOpen, onCloseModal, onOpenModal, onDeleteBadge }) => {
     return (
         <div>
             <div className="BadgeDetails__hero">
@@ -42,9 +43,16 @@ const BadgeDetails = ({ badge, hash }) => {
                                 </Link>
                             </div>
                             <div className="form-group">
-                                <button className="btn btn-danger">
+                                <button className="btn btn-danger" onClick={ onOpenModal }>
                                     Delete
                                 </button>
+                                <DeleteBadgeModal 
+                                isOpen={ modalIsOpen } 
+                                onCloseModal={ onCloseModal }
+                                onDeleteBadge= { onDeleteBadge }
+                                 />
+                                {/* createPortal te permite hacer render un componente donde tu se lo indiques  createPortal(Que, Donde)*/}
+                                {/* { ReactDOM.createPortal(<h1>Realmente no estoy dentro de App</h1>, document.getElementById('modal'))} */}
                             </div>
                         </div>
                     </div>

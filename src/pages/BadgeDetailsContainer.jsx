@@ -12,7 +12,8 @@ class BadgeDetailsContainer extends Component{
     state = {
         loading:true,
         error:null,
-        data:undefined
+        data:undefined,
+        modalIsOpen: false
     }
 
     componentDidMount(){
@@ -24,10 +25,30 @@ class BadgeDetailsContainer extends Component{
 
         try {
             const data = await api.badges.read(this.props.match.params.badgeId);
-            console.log(data);
             this.setState({loading:false, data:data});
         } catch (error) {
-            this.setState({loading:true, error:error});
+            this.setState({loading:false, error:error});
+        }
+    }
+
+    handleCloseModal = () =>{
+        this.setState({ modalIsOpen: false })
+    }
+
+    handleOpenModal = () =>{
+        this.setState({ modalIsOpen: true })
+    }
+
+    onDeleteBadge = async (e) =>{
+        this.setState({loading:true, error:null});
+
+        try {
+            await api.badges.remove(this.props.match.params.badgeId);
+            this.setState({loading:false});
+
+            this.props.history.push('/badges');
+        } catch (error) {
+            this.setState({loading:false, error:error});
         }
     }
 
@@ -42,7 +63,13 @@ class BadgeDetailsContainer extends Component{
         }
 
         return (
-            <BadgeDetails badge={ this.state.data } hash={ md5(this.state.data.email) }/>
+            <BadgeDetails 
+            onOpenModal={ this.handleOpenModal } 
+            onCloseModal={ this.handleCloseModal }
+            onDeleteBadge={ this.onDeleteBadge }
+            modalIsOpen={ this.state.modalIsOpen }
+            badge={ this.state.data } 
+            hash={ md5(this.state.data.email) }/>
         )
     }
 }
